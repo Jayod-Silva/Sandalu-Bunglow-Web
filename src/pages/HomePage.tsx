@@ -10,6 +10,7 @@ import CTASection from '../components/CTASection';
 import Footer from '../components/Footer';
 import LoadingAnimation from '../components/LoadingAnimation';
 import WhatsAppButton from '../components/WhatsAppButton';
+import QuickBook from '../components/BookingBar';
 
 const HomePage = () => {
   const [isLoading, setIsLoading] = useState(() => {
@@ -37,10 +38,11 @@ const HomePage = () => {
   }
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white sm:overflow-x-hidden">
       <Navbar />
       <HeroSection />
       <BungalowCards />
+      <QuickBook />
       <FeaturesSection />
       <ExperienceSection />
       <StatsSection />

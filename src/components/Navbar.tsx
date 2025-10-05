@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Phone, Mail, ChevronDown } from 'lucide-react';
 
+
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -55,30 +56,34 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${
-        isVisible ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'
+      className={`fixed top-0 p-4 left-0 right-0 z-40 transition-all duration-500 ${
+        isVisible ? 'translate-y-0 backdrop-blur-sm opacity-100' : '-translate-y-full opacity-0'
       } ${
         isScrolled
-          ? 'bg-white/95 backdrop-blur-md shadow-lg'
+          ? 'bg-white/95 backdrop-blur-md shadow-lg py-4'
           : 'bg-transparent'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <Link to="/" className="flex-shrink-0">
-            <h1
-              className={`text-2xl md:text-3xl font-light tracking-wider transition-colors duration-300 ${
-                isScrolled ? 'text-neutral-900' : 'text-white'
-              }`}
-            >
-              SANDALU
-            </h1>
+            <img
+              src={
+          isScrolled
+            ? 'src/assets/Logo.png'
+            : isVisible
+            ? 'src/assets/Logo2.png'
+            : 'src/assets/Logo2.png'
+              }
+              alt="Sandalu Bungalows"
+              className="h-20 w-auto"
+            />
           </Link>
 
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center  space-x-10 curdsor-pointer">
             <Link
               to="/"
-              className={`text-sm tracking-wider font-light transition-all duration-300 hover:scale-105 ${
+              className={`text-md tracking-wider font-regular transition-all duration-300 hover:scale-105 ${
                 isScrolled
                   ? 'text-neutral-700 hover:text-amber-600'
                   : 'text-white hover:text-amber-400'
@@ -90,14 +95,14 @@ const Navbar = () => {
             <div className="relative locations-dropdown">
               <button
                 onClick={toggleLocations}
-                className={`text-sm tracking-wider font-light transition-all duration-300 hover:scale-105 flex items-center gap-1 ${
+                className={`text-md tracking-wider font-regular transition-all duration-300 hover:scale-105 flex items-center gap-1 ${
                   isScrolled
                     ? 'text-neutral-700 hover:text-amber-600'
                     : 'text-white hover:text-amber-400'
                 }`}
               >
                 Locations
-                <ChevronDown size={16} className={`transition-transform duration-300 ${isLocationsOpen ? 'rotate-180' : ''}`} />
+                <ChevronDown size={16} className={`transition-transform duration-300 cursor-pointer ${isLocationsOpen ? 'rotate-180' : ''}`} />
               </button>
 
               {isLocationsOpen && (
@@ -107,7 +112,7 @@ const Navbar = () => {
                       key={loc.path}
                       to={loc.path}
                       onClick={() => setIsLocationsOpen(false)}
-                      className="block px-4 py-2 text-sm text-neutral-700 hover:bg-amber-50 hover:text-amber-600 transition-colors duration-200"
+                      className="block px-4 py-2 text-md text-neutral-700 hover:bg-amber-50 hover:text-amber-600 transition-colors duration-200"
                     >
                       {loc.name}
                     </Link>
@@ -118,7 +123,7 @@ const Navbar = () => {
 
             <Link
               to="/gallery"
-              className={`text-sm tracking-wider font-light transition-all duration-300 hover:scale-105 ${
+              className={`text-md tracking-wider font-regular transition-all duration-300 hover:scale-105 ${
                 isScrolled
                   ? 'text-neutral-700 hover:text-amber-600'
                   : 'text-white hover:text-amber-400'
@@ -128,7 +133,7 @@ const Navbar = () => {
             </Link>
             <Link
               to="/about"
-              className={`text-sm tracking-wider font-light transition-all duration-300 hover:scale-105 ${
+              className={`text-md tracking-wider font-regular transition-all duration-300 hover:scale-105 ${
                 isScrolled
                   ? 'text-neutral-700 hover:text-amber-600'
                   : 'text-white hover:text-amber-400'
@@ -138,7 +143,7 @@ const Navbar = () => {
             </Link>
             <Link
               to="/contact"
-              className={`text-sm tracking-wider font-light transition-all duration-300 hover:scale-105 ${
+              className={`text-md tracking-wider font-regular transition-all duration-300 hover:scale-105 ${
                 isScrolled
                   ? 'text-neutral-700 hover:text-amber-600'
                   : 'text-white hover:text-amber-400'
@@ -148,13 +153,13 @@ const Navbar = () => {
             </Link>
             <Link
               to="/booking"
-              className="px-4 py-2 bg-amber-600 hover:bg-amber-700 text-white rounded-lg transition-all duration-300 text-sm tracking-wider"
+              className="px-4 py-2 bg-amber-600 hover:bg-amber-700 text-white rounded-lg transition-all duration-300 text-md tracking-wider"
             >
               Book Now
             </Link>
           </div>
 
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden md:flex items-center space-x-6">
             <a
               href="tel:+1234567890"
               className={`p-2 rounded-full transition-all duration-300 hover:scale-110 ${
@@ -195,7 +200,7 @@ const Navbar = () => {
           <div className="px-4 py-6 space-y-4">
             <Link
               to="/"
-              className="block text-neutral-700 hover:text-amber-600 transition-colors duration-300 text-sm tracking-wider"
+              className="block text-neutral-700 hover:text-amber-600 transition-colors duration-300 text-md tracking-wider"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Home
@@ -207,7 +212,7 @@ const Navbar = () => {
                 <Link
                   key={loc.path}
                   to={loc.path}
-                  className="block pl-4 py-2 text-neutral-700 hover:text-amber-600 transition-colors duration-300 text-sm"
+                  className="block pl-4 py-2 text-neutral-700 hover:text-amber-600 transition-colors duration-300 text-md"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {loc.name}
@@ -217,28 +222,28 @@ const Navbar = () => {
 
             <Link
               to="/gallery"
-              className="block text-neutral-700 hover:text-amber-600 transition-colors duration-300 text-sm tracking-wider"
+              className="block text-neutral-700 hover:text-amber-600 transition-colors duration-300 text-md tracking-wider"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Gallery
             </Link>
             <Link
               to="/about"
-              className="block text-neutral-700 hover:text-amber-600 transition-colors duration-300 text-sm tracking-wider"
+              className="block text-neutral-700 hover:text-amber-600 transition-colors duration-300 text-md tracking-wider"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               About Us
             </Link>
             <Link
               to="/contact"
-              className="block text-neutral-700 hover:text-amber-600 transition-colors duration-300 text-sm tracking-wider"
+              className="block text-neutral-700 hover:text-amber-600 transition-colors duration-300 text-md tracking-wider"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Contact Us
             </Link>
             <Link
               to="/booking"
-              className="block px-4 py-2 bg-amber-600 text-white rounded-lg text-center text-sm tracking-wider"
+              className="block px-4 py-2 bg-amber-600 text-white rounded-lg text-center text-md tracking-wider"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Book Now
@@ -249,14 +254,14 @@ const Navbar = () => {
                 className="flex items-center space-x-2 text-neutral-700 hover:text-amber-600 transition-colors duration-300"
               >
                 <Phone size={18} />
-                <span className="text-sm">Call Us</span>
+                <span className="text-md">Call Us</span>
               </a>
               <a
                 href="mailto:info@sandalu.com"
                 className="flex items-center space-x-2 text-neutral-700 hover:text-amber-600 transition-colors duration-300"
               >
                 <Mail size={18} />
-                <span className="text-sm">Email</span>
+                <span className="text-md">Email</span>
               </a>
             </div>
           </div>
