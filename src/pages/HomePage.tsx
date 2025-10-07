@@ -11,6 +11,7 @@ import Footer from '../components/Footer';
 import LoadingAnimation from '../components/LoadingAnimation';
 import WhatsAppButton from '../components/WhatsAppButton';
 import QuickBook from '../components/BookingBar';
+import HomeIMG from '../components/HomeImage';
 
 const HomePage = () => {
   const [isLoading, setIsLoading] = useState(() => {
@@ -44,6 +45,7 @@ const HomePage = () => {
       <BungalowCards />
       <QuickBook />
       <FeaturesSection />
+      <HomeIMG />
       <ExperienceSection />
       <StatsSection />
       <TestimonialsSection />

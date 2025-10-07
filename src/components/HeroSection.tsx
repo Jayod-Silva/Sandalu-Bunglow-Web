@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { ChevronRight, MapPin, Calendar } from 'lucide-react';
 
+
 interface HeroSlide {
   image: string;
   title: string;
@@ -13,17 +14,22 @@ const HeroSection = () => {
 
   const slides: HeroSlide[] = [
     {
-      image: 'https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?auto=compress&cs=tinysrgb&w=1920',
+      image: 'src/assets/hero1.jpeg',
       title: 'Escape to Paradise',
       description: 'Experience luxury and tranquility in our exclusive beachfront bungalows. Where every moment becomes a cherished memory.',
     },
     {
-      image: 'https://images.pexels.com/photos/1268871/pexels-photo-1268871.jpeg?auto=compress&cs=tinysrgb&w=1920',
+      image: 'src/assets/hero2.jpeg',
       title: 'Your Private Sanctuary',
       description: 'Immerse yourself in breathtaking ocean views and world-class amenities. A perfect blend of comfort and elegance awaits.',
     },
     {
-      image: 'https://images.pexels.com/photos/2373201/pexels-photo-2373201.jpeg?auto=compress&cs=tinysrgb&w=1920',
+      image: 'src/assets/hero3.jpeg',
+      title: 'Unforgettable Moments',
+      description: 'Create lasting memories in a tropical paradise. Where pristine beaches meet unparalleled hospitality and luxury.',
+    },
+    {
+      image: 'src/assets/hero4.jpeg',
       title: 'Unforgettable Moments',
       description: 'Create lasting memories in a tropical paradise. Where pristine beaches meet unparalleled hospitality and luxury.',
     },

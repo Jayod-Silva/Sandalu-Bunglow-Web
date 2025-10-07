@@ -72,9 +72,9 @@ export default function BookingSearchComponent() {
     <div className="min-h-100 bg-gray-900 flex items-start justify-center py-10 relative">
       <div className="w-full max-w-6xl">
         {/* Search Bar */}
-        <div className="bg-white rounded-2xl p-4 shadow-md border border-orange-100/80 relative">
-          <form className="flex flex-col md:flex-row md:items-center gap-4">
-            <div className="flex-1 flex items-center divide-x divide-orange-100/60 rounded-lg overflow-hidden border border-orange-50 shadow-sm">
+        <div className="bg-amber-500 rounded-2xl p-1 shadow-md border  relative">
+          <form className="flex flex-col md:flex-row md:items-center gap-4 bg-white rounded-xl gborder border-orange-50">
+            <div className="flex-1 flex items-center divide-x divide-orange-100/60  overflow-hidden  shadow-sm">
               {/* Location Dropdown */}
               <label className="flex items-center gap-3 px-4 py-3 flex-1">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -120,7 +120,7 @@ export default function BookingSearchComponent() {
 
               {/* Book Button */}
               <div className="px-4 py-3">
-                <button type="button" onClick={handleBooking} className="bg-orange-500 hover:bg-orange-600 text-white px-5 py-2 rounded-full shadow-sm">Book</button>
+                <button type="button" onClick={handleBooking} className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-2 rounded-lg shadow-sm">Book</button>
               </div>
             </div>
           </form>
