@@ -1,16 +1,58 @@
-# React + Vite
+# Sandalu Bungalow Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A luxury bungalow accommodation website built with React, Vite, and TailwindCSS.
 
-Currently, two official plugins are available:
+## 🚀 Deployment
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This project is configured for Vercel deployment:
 
-## React Compiler
+### Automatic Deployment
+1. Push your code to GitHub
+2. Connect your repository to Vercel
+3. Vercel will automatically build and deploy your site
 
-The React Compiler is not enabled on this template. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Manual Deployment
+```bash
+# Install dependencies
+npm install
 
-## Expanding the ESLint configuration
+# Build for production
+npm run build
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+# Deploy to Vercel
+vercel --prod
+```
+
+## 🛠️ Development
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
+
+# Lint code
+npm run lint
+```
+
+## 📁 Project Structure
+
+- `src/` - React components and pages
+- `public/` - Static assets
+- `dist/` - Production build output
+- `vercel.json` - Vercel deployment configuration
+
+## 🎨 Technologies Used
+
+- React 19
+- Vite 7
+- TailwindCSS 4
+- Lucide React Icons
+- React Router DOM
