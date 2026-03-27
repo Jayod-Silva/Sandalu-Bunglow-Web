@@ -1,7 +1,0 @@
-{
-  "buildCommand": "cd Sandalu-Bunglow-Web && npm install && npm run build",
-  "outputDirectory": "Sandalu-Bunglow-Web/dist",
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
-  ]
-}
